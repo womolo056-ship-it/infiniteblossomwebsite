@@ -1,0 +1,547 @@
+/* ============================================
+   Hero Section
+   ============================================ */
+
+.hero {
+  background: linear-gradient(135deg, #F8F9FA 0%, #E9ECEF 100%);
+  padding: var(--spacing-3xl) 0;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2xl);
+  width: 100%;
+}
+
+/* ============================================
+   Text Content (Left Column)
+   ============================================ */
+
+.textContent {
+  flex: 1;
+  max-width: 600px;
+}
+
+.headline {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-extrabold);
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text);
+}
+
+.highlight {
+  color: var(--color-primary);
+  position: relative;
+}
+
+.description {
+  font-size: var(--font-size-lg);
+  line-height: 1.6;
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-xl);
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background-color: var(--color-primary);
+  color: white;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.ctaButton:hover::before {
+  left: 100%;
+}
+
+.ctaButton:hover {
+  background-color: #3db8b0;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.ctaButton:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-md);
+  background-color: #35a39c;
+}
+
+.ctaButton:focus-visible {
+  outline: 3px solid rgba(78, 205, 196, 0.4);
+  outline-offset: 2px;
+}
+
+.buttonIcon {
+  font-size: 0.875rem;
+  transition: transform var(--transition-base);
+}
+
+.ctaButton:hover .buttonIcon {
+  transform: translateX(4px);
+}
+
+/* ============================================
+   Image Content (Right Column)
+   ============================================ */
+
+.imageContent {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.heroImageWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.heroImagePlaceholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.heroImagePlaceholder.loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.placeholderText {
+  color: white;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ============================================
+   Decorative Background Elements
+   ============================================ */
+
+.decorativeCircle1 {
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(78, 205, 196, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.decorativeCircle2 {
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(255, 107, 107, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.decorativeDots {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  width: 100px;
+  height: 100px;
+  background-image: radial-gradient(circle, var(--color-primary) 2px, transparent 2px);
+  background-size: 20px 20px;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+/* ============================================
+   Wave Pattern
+   ============================================ */
+
+.wavePattern {
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  opacity: 0.15;
+  z-index: 1;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+/* ============================================
+   Profile Images Overlay
+   ============================================ */
+
+.profileOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.profileImage1,
+.profileImage2,
+.profileImage3 {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: var(--shadow-lg);
+  border: 3px solid white;
+  animation: bounce 3s ease-in-out infinite;
+}
+
+.profileImage1 {
+  top: 10%;
+  right: -10px;
+  animation-delay: 0s;
+}
+
+.profileImage2 {
+  bottom: 20%;
+  left: -20px;
+  animation-delay: 1s;
+}
+
+.profileImage3 {
+  top: 50%;
+  right: -30px;
+  animation-delay: 2s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ============================================
+   Geometric Patterns
+   ============================================ */
+
+.geometricPattern1 {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 80px;
+  height: 80px;
+  border: 3px solid var(--color-secondary);
+  border-radius: var(--radius-lg);
+  opacity: 0.3;
+  z-index: 1;
+  animation: rotate 10s linear infinite;
+}
+
+.geometricPattern2 {
+  position: absolute;
+  bottom: -30px;
+  right: 50px;
+  width: 60px;
+  height: 60px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  opacity: 0.4;
+  z-index: 1;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.6;
+  }
+}
+
+/* ============================================
+   Responsive Design - Media Queries
+   ============================================ */
+
+/* Tablet and below (< 1024px) */
+@media (max-width: 1023px) {
+  .hero {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .content {
+    gap: var(--spacing-xl);
+  }
+
+  .headline {
+    font-size: var(--font-size-3xl);
+  }
+
+  .description {
+    font-size: var(--font-size-base);
+  }
+
+  .heroImageWrapper {
+    max-width: 400px;
+  }
+
+  .profileImage1,
+  .profileImage2,
+  .profileImage3 {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+
+  .decorativeCircle1 {
+    width: 200px;
+    height: 200px;
+    top: -50px;
+    right: -50px;
+  }
+
+  .decorativeCircle2 {
+    width: 180px;
+    height: 180px;
+    bottom: -50px;
+    left: -50px;
+  }
+}
+
+/* Mobile (< 768px) - Stack vertically */
+@media (max-width: 767px) {
+  .hero {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .content {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    text-align: center;
+  }
+
+  .textContent {
+    max-width: 100%;
+    order: 1;
+  }
+
+  .imageContent {
+    order: 2;
+    width: 100%;
+  }
+
+  .headline {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .description {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .ctaButton {
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: var(--font-size-sm);
+  }
+
+  .heroImageWrapper {
+    max-width: 100%;
+  }
+
+  .heroImagePlaceholder {
+    aspect-ratio: 16 / 9;
+  }
+
+  .placeholderText {
+    font-size: var(--font-size-lg);
+  }
+
+  /* Adjust decorative elements for mobile */
+  .wavePattern {
+    width: 150px;
+    height: 150px;
+    bottom: -30px;
+    right: -30px;
+  }
+
+  .profileImage1 {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+    top: 5%;
+    right: -5px;
+  }
+
+  .profileImage2 {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+    bottom: 15%;
+    left: -10px;
+  }
+
+  .profileImage3 {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+    top: 45%;
+    right: -15px;
+  }
+
+  .geometricPattern1 {
+    width: 60px;
+    height: 60px;
+    top: -15px;
+    left: -15px;
+  }
+
+  .geometricPattern2 {
+    width: 45px;
+    height: 45px;
+    bottom: -20px;
+    right: 30px;
+  }
+
+  .decorativeCircle1,
+  .decorativeCircle2 {
+    display: none;
+  }
+
+  .decorativeDots {
+    display: none;
+  }
+}
+
+/* Small mobile (< 480px) */
+@media (max-width: 479px) {
+  .headline {
+    font-size: var(--font-size-xl);
+  }
+
+  .description {
+    font-size: 0.813rem;
+  }
+
+  .ctaButton {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .profileImage1,
+  .profileImage2,
+  .profileImage3 {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+
+/* Extra small mobile (320px) */
+@media (max-width: 320px) {
+  .hero {
+    padding: var(--spacing-md) 0;
+  }
+
+  .headline {
+    font-size: var(--font-size-lg);
+  }
+
+  .description {
+    font-size: 0.75rem;
+  }
+}

@@ -1,0 +1,547 @@
+/* ============================================
+   About Section
+   ============================================ */
+
+.about {
+  background: var(--color-background-light);
+  padding: var(--spacing-3xl) 0;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3xl);
+  width: 100%;
+}
+
+/* ============================================
+   Image Section (Left Column)
+   ============================================ */
+
+.imageSection {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+/* ============================================
+   Image Collage
+   ============================================ */
+
+.imageCollage {
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
+.mainImage {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.mainImage.loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.secondaryImage {
+  position: absolute;
+  bottom: -30px;
+  left: -30px;
+  width: 140px;
+  height: 140px;
+  background: linear-gradient(135deg, var(--color-accent) 0%, #FFC107 100%);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-xl);
+  border: 4px solid white;
+  z-index: 3;
+}
+
+.placeholderText {
+  color: white;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  text-align: center;
+}
+
+.secondaryImage .placeholderText {
+  font-size: 3rem;
+}
+
+/* ============================================
+   Decorative Badge
+   ============================================ */
+
+.badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  z-index: 3;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.badgeIcon {
+  font-size: 2rem;
+}
+
+.badgeText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.badgeNumber {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.badgeLabel {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-light);
+  font-weight: var(--font-weight-medium);
+  line-height: 1;
+}
+
+/* ============================================
+   Decorative Background Elements
+   ============================================ */
+
+.decorativeCircle {
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: 150px;
+  height: 150px;
+  border: 3px solid var(--color-accent);
+  border-radius: 50%;
+  opacity: 0.3;
+  z-index: 1;
+  animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.decorativeDots {
+  position: absolute;
+  bottom: -20px;
+  right: 50px;
+  width: 80px;
+  height: 80px;
+  background-image: radial-gradient(circle, var(--color-secondary) 2px, transparent 2px);
+  background-size: 15px 15px;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+.decorativeSquare {
+  position: absolute;
+  top: 50%;
+  right: -40px;
+  width: 70px;
+  height: 70px;
+  background: var(--color-primary);
+  border-radius: var(--radius-md);
+  opacity: 0.2;
+  z-index: 1;
+  transform: translateY(-50%) rotate(45deg);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translateY(-50%) rotate(45deg) scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-50%) rotate(45deg) scale(1.1);
+    opacity: 0.3;
+  }
+}
+
+/* ============================================
+   Text Content (Right Column)
+   ============================================ */
+
+.textContent {
+  flex: 1;
+  max-width: 600px;
+}
+
+.sectionLabel {
+  display: inline-block;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-xs);
+}
+
+.heading {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-extrabold);
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text);
+}
+
+.highlight {
+  color: var(--color-primary);
+  position: relative;
+}
+
+.description {
+  font-size: var(--font-size-base);
+  line-height: 1.7;
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* ============================================
+   Feature List
+   ============================================ */
+
+.featureList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+}
+
+.checkIcon {
+  color: var(--color-primary);
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+/* ============================================
+   Responsive Design - Media Queries
+   ============================================ */
+
+/* Tablet and below (< 1024px) */
+@media (max-width: 1023px) {
+  .about {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .content {
+    gap: var(--spacing-2xl);
+  }
+
+  .heading {
+    font-size: var(--font-size-2xl);
+  }
+
+  .description {
+    font-size: var(--font-size-sm);
+  }
+
+  .imageWrapper {
+    max-width: 400px;
+  }
+
+  .secondaryImage {
+    width: 120px;
+    height: 120px;
+    bottom: -25px;
+    left: -25px;
+  }
+
+  .secondaryImage .placeholderText {
+    font-size: 2.5rem;
+  }
+
+  .badge {
+    padding: var(--spacing-sm);
+    bottom: -15px;
+    right: -15px;
+  }
+
+  .badgeIcon {
+    font-size: 1.5rem;
+  }
+
+  .badgeNumber {
+    font-size: var(--font-size-lg);
+  }
+
+  .decorativeCircle {
+    width: 120px;
+    height: 120px;
+    top: -20px;
+    left: -20px;
+  }
+
+  .decorativeDots {
+    width: 60px;
+    height: 60px;
+    bottom: -15px;
+    right: 40px;
+  }
+
+  .decorativeSquare {
+    width: 60px;
+    height: 60px;
+    right: -30px;
+  }
+}
+
+/* Mobile (< 768px) - Stack vertically */
+@media (max-width: 767px) {
+  .about {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .content {
+    flex-direction: column;
+    gap: var(--spacing-xl);
+  }
+
+  .imageSection {
+    order: 1;
+    width: 100%;
+  }
+
+  .textContent {
+    order: 2;
+    max-width: 100%;
+  }
+
+  .imageWrapper {
+    max-width: 100%;
+  }
+
+  .mainImage {
+    aspect-ratio: 16 / 9;
+  }
+
+  .secondaryImage {
+    width: 100px;
+    height: 100px;
+    bottom: -20px;
+    left: -20px;
+    border: 3px solid white;
+  }
+
+  .secondaryImage .placeholderText {
+    font-size: 2rem;
+  }
+
+  .heading {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .description {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .featureItem {
+    font-size: var(--font-size-sm);
+  }
+
+  .checkIcon {
+    font-size: 1.1rem;
+  }
+
+  .badge {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    bottom: -10px;
+    right: -10px;
+  }
+
+  .badgeIcon {
+    font-size: 1.25rem;
+  }
+
+  .badgeNumber {
+    font-size: var(--font-size-base);
+  }
+
+  .badgeLabel {
+    font-size: 0.625rem;
+  }
+
+  .decorativeCircle {
+    width: 100px;
+    height: 100px;
+    top: -15px;
+    left: -15px;
+  }
+
+  .decorativeDots {
+    width: 50px;
+    height: 50px;
+    bottom: -10px;
+    right: 30px;
+  }
+
+  .decorativeSquare {
+    width: 50px;
+    height: 50px;
+    right: -25px;
+  }
+}
+
+/* Small mobile (< 480px) */
+@media (max-width: 479px) {
+  .heading {
+    font-size: var(--font-size-lg);
+  }
+
+  .description {
+    font-size: 0.813rem;
+  }
+
+  .featureItem {
+    font-size: 0.813rem;
+  }
+
+  .secondaryImage {
+    width: 80px;
+    height: 80px;
+    bottom: -15px;
+    left: -15px;
+  }
+
+  .secondaryImage .placeholderText {
+    font-size: 1.5rem;
+  }
+
+  .badge {
+    padding: var(--spacing-xs);
+    gap: var(--spacing-xs);
+  }
+
+  .badgeIcon {
+    font-size: 1rem;
+  }
+
+  .badgeNumber {
+    font-size: var(--font-size-sm);
+  }
+
+  .decorativeSquare {
+    width: 40px;
+    height: 40px;
+    right: -20px;
+  }
+}
+
+/* Extra small mobile (320px) */
+@media (max-width: 320px) {
+  .about {
+    padding: var(--spacing-md) 0;
+  }
+
+  .heading {
+    font-size: var(--font-size-base);
+  }
+
+  .description {
+    font-size: 0.75rem;
+  }
+
+  .featureItem {
+    font-size: 0.75rem;
+  }
+
+  .secondaryImage {
+    width: 70px;
+    height: 70px;
+    bottom: -12px;
+    left: -12px;
+  }
+
+  .secondaryImage .placeholderText {
+    font-size: 1.25rem;
+  }
+
+  .decorativeCircle,
+  .decorativeDots,
+  .decorativeSquare {
+    display: none;
+  }
+}

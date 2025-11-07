@@ -1,0 +1,47 @@
+// Course offerings data
+export const courses = [
+  {
+    id: 'english-full',
+    title: 'English Full Course',
+    description: 'Complete English language course covering grammar, vocabulary, reading, writing, and conversation skills for all levels.',
+    price: '15,000 Kz',
+    priceValue: 15000,
+    image: 'https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=800&q=80',
+    category: 'Language',
+    duration: '6 months',
+    level: 'All Levels'
+  },
+  {
+    id: 'english-pronunciation',
+    title: 'English Pronunciation',
+    description: 'Master English pronunciation with focused training on phonetics, intonation, and accent reduction techniques.',
+    price: '20,000 Kz',
+    priceValue: 20000,
+    image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80',
+    category: 'Language',
+    duration: '3 months',
+    level: 'Intermediate'
+  },
+  {
+    id: 'french-beginners',
+    title: 'French for Beginners',
+    description: 'Start your French journey with this comprehensive beginner course covering basics, pronunciation, and everyday conversation.',
+    price: '10,000 Kz',
+    priceValue: 10000,
+    image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80',
+    category: 'Language',
+    duration: '4 months',
+    level: 'Beginner'
+  },
+  {
+    id: 'ai-for-everyone',
+    title: 'AI for Everyone',
+    description: 'Learn the fundamentals of Artificial Intelligence, machine learning basics, and how AI is transforming industries.',
+    price: '10,000 Kz',
+    priceValue: 10000,
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
+    category: 'Technology',
+    duration: '2 months',
+    level: 'Beginner'
+  }
+];

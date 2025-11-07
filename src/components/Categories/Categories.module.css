@@ -1,0 +1,187 @@
+/* ============================================
+   Categories Section
+   ============================================ */
+
+.categories {
+  padding: var(--section-padding-y) 0;
+  background-color: var(--color-background);
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+}
+
+/* Section Heading */
+.sectionHeading {
+  text-align: center;
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin-bottom: var(--spacing-2xl);
+}
+
+/* Categories Grid */
+.categoriesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+}
+
+/* Category Card */
+.categoryCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl);
+  background-color: var(--color-background);
+  border: 2px solid var(--color-background-dark);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.categoryCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, transparent, rgba(78, 205, 196, 0.05));
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+/* Icon Wrapper */
+.iconWrapper {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-2xl);
+  color: white;
+  transition: all var(--transition-base);
+  position: relative;
+  z-index: 1;
+}
+
+/* Category Name */
+.categoryName {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  margin: 0;
+  transition: color var(--transition-base);
+  position: relative;
+  z-index: 1;
+}
+
+/* Hover Effects */
+.categoryCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--color-primary);
+}
+
+.categoryCard:hover::before {
+  opacity: 1;
+}
+
+.categoryCard:hover .iconWrapper {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.categoryCard:hover .categoryName {
+  color: var(--color-primary);
+}
+
+/* Active State */
+.categoryCard:active {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Focus State for Accessibility */
+.categoryCard:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+/* Tablet and up (>= 768px) - 2 columns */
+@media (min-width: 768px) {
+  .categoriesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+  }
+  
+  .sectionHeading {
+    margin-bottom: var(--spacing-3xl);
+  }
+}
+
+/* Desktop and up (>= 1024px) - 3 columns */
+@media (min-width: 1024px) {
+  .categoriesGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .categoryCard {
+    padding: var(--spacing-2xl);
+  }
+  
+  .iconWrapper {
+    width: 100px;
+    height: 100px;
+    font-size: var(--font-size-3xl);
+  }
+}
+
+/* View All Button */
+.viewAllWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-2xl);
+}
+
+.viewAllButton {
+  display: inline-block;
+  padding: var(--spacing-md) var(--spacing-2xl);
+  background-color: var(--color-primary);
+  color: white;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-md);
+}
+
+.viewAllButton:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.viewAllButton:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+.viewAllButton:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}

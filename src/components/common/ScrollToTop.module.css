@@ -1,0 +1,72 @@
+/* ============================================
+   Scroll to Top Button
+   ============================================ */
+
+.scrollToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  z-index: var(--z-fixed);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all var(--transition-base);
+}
+
+.scrollToTop.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scrollToTop:hover {
+  background-color: #3db8b0;
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+.scrollToTop:active {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.scrollToTop:focus-visible {
+  outline: 3px solid rgba(78, 205, 196, 0.4);
+  outline-offset: 3px;
+}
+
+/* ============================================
+   Responsive Styles
+   ============================================ */
+
+@media (max-width: 767px) {
+  .scrollToTop {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .scrollToTop {
+    bottom: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
