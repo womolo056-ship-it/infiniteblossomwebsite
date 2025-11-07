@@ -19,6 +19,7 @@ export default defineConfig({
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
+          router: ['react-router-dom'],
           icons: ['react-icons']
         },
         // Optimize chunk file names
@@ -30,7 +31,9 @@ export default defineConfig({
     // Optimize chunk size
     chunkSizeWarningLimit: 1000,
     // Enable CSS code splitting
-    cssCodeSplit: true
+    cssCodeSplit: true,
+    // Optimize assets
+    assetsInlineLimit: 4096 // Inline assets smaller than 4kb
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-icons']

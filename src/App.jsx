@@ -3,13 +3,14 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import Home from './pages/Home';
-import Services from './pages/Services';
-import About from './pages/About';
-import Testimonials from './pages/Testimonials';
-import Contact from './pages/Contact';
-import CourseDetail from './pages/CourseDetail';
-import ServiceDetail from './pages/ServiceDetail';
 
+// Lazy load pages for better initial load
+const Services = lazy(() => import('./pages/Services'));
+const About = lazy(() => import('./pages/About'));
+const Testimonials = lazy(() => import('./pages/Testimonials'));
+const Contact = lazy(() => import('./pages/Contact'));
+const CourseDetail = lazy(() => import('./pages/CourseDetail'));
+const ServiceDetail = lazy(() => import('./pages/ServiceDetail'));
 const ScrollToTop = lazy(() => import('./components/common/ScrollToTop'));
 
 function App() {
@@ -18,15 +19,17 @@ function App() {
       <a href="#main" className="skip-to-main">Skip to main content</a>
       <Header />
       <main id="main">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/testimonials" element={<Testimonials />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/course/:id" element={<CourseDetail />} />
-          <Route path="/service/:id" element={<ServiceDetail />} />
-        </Routes>
+        <Suspense fallback={<div style={{minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/testimonials" element={<Testimonials />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/course/:id" element={<CourseDetail />} />
+            <Route path="/service/:id" element={<ServiceDetail />} />
+          </Routes>
+        </Suspense>
       </main>
       <Suspense fallback={null}>
         <ScrollToTop />

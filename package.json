@@ -29,6 +29,7 @@
     "gh-pages": "^6.3.0",
     "globals": "^16.4.0",
     "i": "^0.3.7",
-    "vite": "^7.1.7"
+    "vite": "^7.1.7",
+    "vite-plugin-imagemin": "^0.6.1"
   }
 }

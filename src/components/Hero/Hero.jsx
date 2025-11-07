@@ -40,7 +40,13 @@ function Hero() {
             <div className={styles.heroImageWrapper}>
               {/* Main Hero Image */}
               <div className={styles.heroImagePlaceholder} role="img" aria-label="Students engaged in online learning">
-                <img src={CollabImage} alt="Infinite Blossom collaboration event with students" className={styles.heroImage} />
+                <img 
+                  src={CollabImage} 
+                  alt="Infinite Blossom collaboration event with students" 
+                  className={styles.heroImage}
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               
               {/* Decorative Wave Pattern */}
