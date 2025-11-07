@@ -106,6 +106,8 @@
   width: 100%;
   padding: var(--spacing-md);
   font-size: var(--font-size-base);
+  color: var(--color-text);
+  background-color: #ffffff;
   border: 2px solid var(--color-background-dark);
   border-radius: var(--radius-md);
   transition: all var(--transition-base);
