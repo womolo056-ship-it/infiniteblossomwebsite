@@ -12,7 +12,7 @@ if (import.meta.env.DEV) {
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter basename="/infiniteblossomwebsite">
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </StrictMode>,
