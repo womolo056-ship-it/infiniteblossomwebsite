@@ -2,8 +2,8 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import styles from './Testimonials.module.css';
 
 function Testimonials() {
-  const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation({ threshold: 0.2 });
-  const { ref: testimonialsRef, isVisible: testimonialsVisible } = useScrollAnimation({ threshold: 0.2 });
+  const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation({ threshold: 0.1 });
+  const { ref: testimonialsRef, isVisible: testimonialsVisible } = useScrollAnimation({ threshold: 0.05 });
 
   const testimonials = [
     {
@@ -93,6 +93,7 @@ function Testimonials() {
                     src={testimonial.image} 
                     alt={testimonial.name}
                     className={styles.authorImage}
+                    loading="lazy"
                   />
                   <div className={styles.authorInfo}>
                     <h3 className={styles.authorName}>{testimonial.name}</h3>

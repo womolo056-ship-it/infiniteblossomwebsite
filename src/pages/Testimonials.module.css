@@ -41,6 +41,7 @@
 .testimonialsGrid {
   display: grid;
   gap: var(--spacing-xl);
+  grid-template-columns: 1fr;
 }
 
 .testimonialCard {
@@ -83,6 +84,7 @@
   height: 60px;
   border-radius: 50%;
   object-fit: cover;
+  background-color: var(--color-background-dark);
 }
 
 .authorInfo {

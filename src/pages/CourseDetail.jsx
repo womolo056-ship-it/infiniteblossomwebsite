@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import { courses } from '../data/courses';
 import CEOImage from '../assets/Infiniteblossom-CEO.jpeg';
 import CollabImage1 from '../assets/Colaborationevent1 (1).jpg';
@@ -9,6 +10,14 @@ import styles from './Detail.module.css';
 function CourseDetail() {
   const { id } = useParams();
   const course = courses.find(c => c.id === id);
+
+  // Preload images for better performance
+  useEffect(() => {
+    [CollabImage1, CollabImage2, CollabImage3].forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
 
   if (!course) {
     return (
@@ -22,7 +31,13 @@ function CourseDetail() {
   return (
     <div className={styles.detailPage}>
       {/* Hero Section */}
-      <section className={styles.hero} style={{ backgroundImage: `url(${CollabImage1})` }}>
+      <section className={styles.hero}>
+        <div 
+          className={styles.heroBackground}
+          style={{ backgroundImage: `url(${CollabImage1})` }}
+          role="img"
+          aria-label={course.title}
+        />
         <div className={styles.heroOverlay}>
           <div className={styles.container}>
             <div className={styles.badge}>{course.category}</div>
@@ -69,7 +84,7 @@ function CourseDetail() {
             <div className={styles.section}>
               <h2 className={styles.sectionTitle}>Meet Our CEO & Lead Instructor</h2>
               <div className={styles.ceoSection}>
-                <img src={CEOImage} alt="Infinite Blossom CEO" className={styles.ceoImage} />
+                <img src={CEOImage} alt="Infinite Blossom CEO" className={styles.ceoImage} loading="lazy" />
                 <div className={styles.ceoInfo}>
                   <h3 className={styles.ceoName}>Evaris Mbuyi</h3>
                   <p className={styles.ceoTitle}>CEO & Founder</p>
@@ -92,9 +107,9 @@ function CourseDetail() {
                 educational excellence and community engagement.
               </p>
               <div className={styles.gallery}>
-                <img src={CollabImage1} alt="Collaboration Event 1" className={styles.galleryImage} />
-                <img src={CollabImage2} alt="Collaboration Event 2" className={styles.galleryImage} />
-                <img src={CollabImage3} alt="Collaboration Event 3" className={styles.galleryImage} />
+                <img src={CollabImage1} alt="Collaboration Event 1" className={styles.galleryImage} loading="lazy" />
+                <img src={CollabImage2} alt="Collaboration Event 2" className={styles.galleryImage} loading="lazy" />
+                <img src={CollabImage3} alt="Collaboration Event 3" className={styles.galleryImage} loading="lazy" />
               </div>
             </div>
 
