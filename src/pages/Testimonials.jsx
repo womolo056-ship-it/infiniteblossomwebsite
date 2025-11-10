@@ -9,49 +9,49 @@ function Testimonials() {
     {
       id: 1,
       name: 'Maria Silva',
-      role: 'English Course Student',
+      role: 'Aluna do Curso de Inglês',
       image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80',
-      text: 'The English Full Course at Infinite Blossom completely transformed my language skills. The instructors are patient, knowledgeable, and truly care about student success.',
+      text: 'O Curso Completo de Inglês na Infinite Blossom transformou completamente minhas habilidades linguísticas. Os instrutores são pacientes, conhecedores e realmente se preocupam com o sucesso dos alunos.',
       rating: 5
     },
     {
       id: 2,
       name: 'João Santos',
-      role: 'Business Owner',
+      role: 'Proprietário de Empresa',
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80',
-      text: 'Their AI automation service revolutionized our business operations. We\'ve seen a 40% increase in efficiency and significant cost savings. Highly recommended!',
+      text: 'O serviço de automação de IA revolucionou nossas operações comerciais. Vimos um aumento de 40% na eficiência e economias significativas de custos. Altamente recomendado!',
       rating: 5
     },
     {
       id: 3,
       name: 'Ana Costa',
-      role: 'French Course Student',
+      role: 'Aluna do Curso de Francês',
       image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80',
-      text: 'Learning French with Infinite Blossom was an amazing experience. The course structure is perfect for beginners, and I can now confidently speak French!',
+      text: 'Aprender francês com a Infinite Blossom foi uma experiência incrível. A estrutura do curso é perfeita para iniciantes, e agora posso falar francês com confiança!',
       rating: 5
     },
     {
       id: 4,
       name: 'Carlos Mendes',
-      role: 'Marketing Manager',
+      role: 'Gerente de Marketing',
       image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80',
-      text: 'The social media management service exceeded our expectations. Our engagement increased by 200% in just three months. Professional and creative team!',
+      text: 'O serviço de gestão de redes sociais superou nossas expectativas. Nosso engajamento aumentou 200% em apenas três meses. Equipe profissional e criativa!',
       rating: 5
     },
     {
       id: 5,
       name: 'Sofia Rodrigues',
-      role: 'AI Course Student',
+      role: 'Aluna do Curso de IA',
       image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80',
-      text: 'The AI for Everyone course made complex concepts easy to understand. Now I can confidently discuss AI trends and apply them in my work.',
+      text: 'O curso de IA para Todos tornou conceitos complexos fáceis de entender. Agora posso discutir tendências de IA com confiança e aplicá-las no meu trabalho.',
       rating: 5
     },
     {
       id: 6,
       name: 'Pedro Alves',
-      role: 'Startup Founder',
+      role: 'Fundador de Startup',
       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80',
-      text: 'Infinite Blossom created our company website and it\'s absolutely stunning. Professional, fast, and exactly what we needed to launch our business.',
+      text: 'A Infinite Blossom criou o site da nossa empresa e está absolutamente deslumbrante. Profissional, rápido e exatamente o que precisávamos para lançar nosso negócio.',
       rating: 5
     }
   ];
@@ -65,10 +65,10 @@ function Testimonials() {
             ref={heroRef}
             className={`${styles.heroTitle} fade-in ${heroVisible ? 'visible' : ''}`}
           >
-            What Our <span className={styles.highlight}>Clients Say</span>
+            O Que Nossos <span className={styles.highlight}>Clientes Dizem</span>
           </h1>
           <p className={styles.heroDescription}>
-            Real stories from real people who have transformed their lives and businesses with Infinite Blossom
+            Histórias reais de pessoas reais que transformaram suas vidas e negócios com a Infinite Blossom
           </p>
         </div>
       </section>
@@ -109,16 +109,16 @@ function Testimonials() {
       {/* CTA Section */}
       <section className={styles.cta}>
         <div className={styles.container}>
-          <h2 className={styles.ctaTitle}>Ready to Write Your Success Story?</h2>
+          <h2 className={styles.ctaTitle}>Pronto para Escrever Sua História de Sucesso?</h2>
           <p className={styles.ctaDescription}>
-            Join our community of satisfied students and businesses today
+            Junte-se à nossa comunidade de alunos e empresas satisfeitos hoje
           </p>
           <div className={styles.ctaButtons}>
             <a href="/services" className={styles.ctaButton}>
-              Explore Services
+              Explorar Serviços
             </a>
             <a href="/contact" className={styles.ctaButtonSecondary}>
-              Get Started
+              Começar Agora
             </a>
           </div>
         </div>

@@ -8,23 +8,23 @@ function About() {
 
   const values = [
     {
-      title: 'Excellence',
-      description: 'We strive for excellence in everything we do, from course content to customer service.',
+      title: 'Excelência',
+      description: 'Buscamos a excelência em tudo o que fazemos, desde o conteúdo do curso até o atendimento ao cliente.',
       icon: '🎯'
     },
     {
-      title: 'Innovation',
-      description: 'We embrace new technologies and teaching methods to provide the best learning experience.',
+      title: 'Inovação',
+      description: 'Abraçamos novas tecnologias e métodos de ensino para proporcionar a melhor experiência de aprendizagem.',
       icon: '💡'
     },
     {
-      title: 'Accessibility',
-      description: 'Quality education and services should be accessible to everyone, regardless of background.',
+      title: 'Acessibilidade',
+      description: 'Educação e serviços de qualidade devem ser acessíveis a todos, independentemente da origem.',
       icon: '🌍'
     },
     {
-      title: 'Growth',
-      description: 'We believe in continuous growth and improvement for both our students and our team.',
+      title: 'Crescimento',
+      description: 'Acreditamos no crescimento e melhoria contínuos tanto para nossos alunos quanto para nossa equipe.',
       icon: '📈'
     }
   ];
@@ -38,10 +38,10 @@ function About() {
             ref={heroRef}
             className={`${styles.heroTitle} fade-in ${heroVisible ? 'visible' : ''}`}
           >
-            About <span className={styles.highlight}>Infinite Blossom</span>
+            Sobre a <span className={styles.highlight}>Infinite Blossom</span>
           </h1>
           <p className={styles.heroDescription}>
-            Empowering individuals and businesses through education and innovative digital solutions
+            Capacitando indivíduos e empresas através da educação e soluções digitais inovadoras
           </p>
         </div>
       </section>
@@ -54,12 +54,12 @@ function About() {
             className={`${styles.missionContent} fade-in ${missionVisible ? 'visible' : ''}`}
           >
             <div className={styles.missionText}>
-              <h2 className={styles.sectionTitle}>Our Mission</h2>
+              <h2 className={styles.sectionTitle}>Nossa Missão</h2>
               <p className={styles.paragraph}>
-                At Infinite Blossom, we are dedicated to transforming lives through quality education and cutting-edge digital services. We believe that everyone deserves access to world-class learning opportunities and innovative business solutions.
+                Na Infinite Blossom, somos dedicados a transformar vidas através de educação de qualidade e serviços digitais de ponta. Acreditamos que todos merecem acesso a oportunidades de aprendizagem de classe mundial e soluções empresariais inovadoras.
               </p>
               <p className={styles.paragraph}>
-                Our team of experienced educators and digital experts work tirelessly to create courses and services that not only meet but exceed expectations. We combine traditional teaching excellence with modern technology to deliver results that matter.
+                Nossa equipe de educadores experientes e especialistas digitais trabalha incansavelmente para criar cursos e serviços que não apenas atendem, mas superam as expectativas. Combinamos excelência de ensino tradicional com tecnologia moderna para entregar resultados que importam.
               </p>
             </div>
             <div className={styles.missionImage}>
@@ -79,7 +79,7 @@ function About() {
             ref={valuesRef}
             className={`${styles.sectionTitle} ${styles.centered} fade-in ${valuesVisible ? 'visible' : ''}`}
           >
-            Our Core Values
+            Nossos Valores Fundamentais
           </h2>
           <div className={`${styles.valuesGrid} stagger-children ${valuesVisible ? 'visible' : ''}`}>
             {values.map((value, index) => (
@@ -97,15 +97,15 @@ function About() {
       <section className={styles.section}>
         <div className={styles.container}>
           <div className={styles.storyContent}>
-            <h2 className={styles.sectionTitle}>Our Story</h2>
+            <h2 className={styles.sectionTitle}>Nossa História</h2>
             <p className={styles.paragraph}>
-              Infinite Blossom was founded with a simple yet powerful vision: to create a platform where learning meets innovation. What started as a small language school has grown into a comprehensive education and digital services provider.
+              A Infinite Blossom foi fundada com uma visão simples, mas poderosa: criar uma plataforma onde a aprendizagem encontra a inovação. O que começou como uma pequena escola de idiomas cresceu para se tornar um provedor abrangente de educação e serviços digitais.
             </p>
             <p className={styles.paragraph}>
-              Today, we serve thousands of students and businesses, helping them achieve their goals through our diverse range of courses and professional services. From language education to AI automation, we continue to expand our offerings to meet the evolving needs of our community.
+              Hoje, servimos milhares de alunos e empresas, ajudando-os a alcançar seus objetivos através de nossa diversa gama de cursos e serviços profissionais. Da educação em idiomas à automação de IA, continuamos a expandir nossas ofertas para atender às necessidades em evolução de nossa comunidade.
             </p>
             <p className={styles.paragraph}>
-              Our success is measured not just in numbers, but in the transformed lives of our students and the thriving businesses we've helped grow. Every day, we work towards making quality education and innovative solutions accessible to all.
+              Nosso sucesso é medido não apenas em números, mas nas vidas transformadas de nossos alunos e nos negócios prósperos que ajudamos a crescer. Todos os dias, trabalhamos para tornar a educação de qualidade e soluções inovadoras acessíveis a todos.
             </p>
           </div>
         </div>
@@ -114,16 +114,16 @@ function About() {
       {/* CTA Section */}
       <section className={styles.cta}>
         <div className={styles.container}>
-          <h2 className={styles.ctaTitle}>Ready to Start Your Journey?</h2>
+          <h2 className={styles.ctaTitle}>Pronto para Começar Sua Jornada?</h2>
           <p className={styles.ctaDescription}>
-            Join thousands of satisfied students and businesses who have transformed their future with Infinite Blossom.
+            Junte-se a milhares de alunos e empresas satisfeitos que transformaram seu futuro com a Infinite Blossom.
           </p>
           <div className={styles.ctaButtons}>
             <a href="/services" className={styles.ctaButton}>
-              Explore Our Services
+              Explorar Nossos Serviços
             </a>
             <a href="/contact" className={styles.ctaButtonSecondary}>
-              Contact Us
+              Entre em Contato
             </a>
           </div>
         </div>

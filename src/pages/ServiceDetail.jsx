@@ -19,8 +19,8 @@ function ServiceDetail() {
   if (!service) {
     return (
       <div className={styles.notFound}>
-        <h1>Service Not Found</h1>
-        <Link to="/services">Back to Services</Link>
+        <h1>Serviço Não Encontrado</h1>
+        <Link to="/services">Voltar aos Serviços</Link>
       </div>
     );
   }
@@ -50,14 +50,14 @@ function ServiceDetail() {
           <div className={styles.mainContent}>
             {/* Overview */}
             <div className={styles.section}>
-              <h2 className={styles.sectionTitle}>Service Overview</h2>
+              <h2 className={styles.sectionTitle}>Visão Geral do Serviço</h2>
               <p className={styles.text}>{service.description}</p>
             </div>
 
             {/* Features */}
             {service.features && (
               <div className={styles.section}>
-                <h2 className={styles.sectionTitle}>What's Included</h2>
+                <h2 className={styles.sectionTitle}>O Que Está Incluído</h2>
                 <ul className={styles.featureList}>
                   {service.features.map((feature, index) => (
                     <li key={index} className={styles.featureItem}>
@@ -71,33 +71,33 @@ function ServiceDetail() {
 
             {/* Our Approach */}
             <div className={styles.section}>
-              <h2 className={styles.sectionTitle}>Our Approach</h2>
+              <h2 className={styles.sectionTitle}>Nossa Abordagem</h2>
               <p className={styles.text}>
-                At Infinite Blossom, we combine cutting-edge technology with personalized service 
-                to deliver exceptional results. Our team of experts works closely with you to 
-                understand your unique needs and create tailored solutions that drive real business value.
+                Na Infinite Blossom, combinamos tecnologia de ponta com serviço personalizado 
+                para entregar resultados excepcionais. Nossa equipe de especialistas trabalha em estreita colaboração com você para 
+                entender suas necessidades únicas e criar soluções personalizadas que geram valor real para o negócio.
               </p>
               <ul className={styles.list}>
-                <li>Initial consultation to understand your goals</li>
-                <li>Custom strategy development</li>
-                <li>Professional implementation and execution</li>
-                <li>Ongoing support and optimization</li>
-                <li>Regular progress reports and analytics</li>
+                <li>Consulta inicial para entender seus objetivos</li>
+                <li>Desenvolvimento de estratégia personalizada</li>
+                <li>Implementação e execução profissional</li>
+                <li>Suporte contínuo e otimização</li>
+                <li>Relatórios regulares de progresso e análises</li>
               </ul>
             </div>
 
             {/* Meet the Team */}
             <div className={styles.section}>
-              <h2 className={styles.sectionTitle}>Meet Our CEO</h2>
+              <h2 className={styles.sectionTitle}>Conheça Nosso CEO</h2>
               <div className={styles.ceoSection}>
-                <img src={CEOImage} alt="Infinite Blossom CEO" className={styles.ceoImage} loading="lazy" />
+                <img src={CEOImage} alt="CEO da Infinite Blossom" className={styles.ceoImage} loading="lazy" />
                 <div className={styles.ceoInfo}>
-                  <h3 className={styles.ceoName}>Evaris Mbuyi</h3>
-                  <p className={styles.ceoTitle}>CEO & Founder</p>
+                  <h3 className={styles.ceoName}>Evaristo Miguel</h3>
+                  <p className={styles.ceoTitle}>CEO e Fundador</p>
                   <p className={styles.text}>
-                    Leading a team of digital experts, our CEO brings years of experience in 
-                    technology and business innovation. We're committed to helping businesses 
-                    thrive in the digital age through innovative solutions and exceptional service.
+                    Liderando uma equipe de especialistas digitais, nosso CEO traz anos de experiência em 
+                    tecnologia e inovação empresarial. Estamos comprometidos em ajudar as empresas 
+                    a prosperar na era digital através de soluções inovadoras e serviço excepcional.
                   </p>
                 </div>
               </div>
@@ -105,38 +105,38 @@ function ServiceDetail() {
 
             {/* Why Choose Us */}
             <div className={styles.section}>
-              <h2 className={styles.sectionTitle}>Why Choose Infinite Blossom?</h2>
+              <h2 className={styles.sectionTitle}>Por Que Escolher a Infinite Blossom?</h2>
               <div className={styles.whyGrid}>
                 <div className={styles.whyCard}>
                   <h3>Expertise</h3>
-                  <p>Years of experience delivering successful projects</p>
+                  <p>Anos de experiência entregando projetos bem-sucedidos</p>
                 </div>
                 <div className={styles.whyCard}>
-                  <h3>Quality</h3>
-                  <p>Commitment to excellence in every detail</p>
+                  <h3>Qualidade</h3>
+                  <p>Compromisso com a excelência em cada detalhe</p>
                 </div>
                 <div className={styles.whyCard}>
-                  <h3>Support</h3>
-                  <p>Dedicated team available to help you succeed</p>
+                  <h3>Suporte</h3>
+                  <p>Equipe dedicada disponível para ajudá-lo a ter sucesso</p>
                 </div>
                 <div className={styles.whyCard}>
-                  <h3>Results</h3>
-                  <p>Proven track record of delivering measurable outcomes</p>
+                  <h3>Resultados</h3>
+                  <p>Histórico comprovado de entrega de resultados mensuráveis</p>
                 </div>
               </div>
             </div>
 
             {/* CTA */}
             <div className={styles.ctaSection}>
-              <h2 className={styles.ctaTitle}>Ready to Get Started?</h2>
+              <h2 className={styles.ctaTitle}>Pronto para Começar?</h2>
               <p className={styles.text}>
-                Let's discuss how we can help transform your business with our professional services.
+                Vamos discutir como podemos ajudar a transformar seu negócio com nossos serviços profissionais.
               </p>
               <Link 
                 to={`/contact?type=service&item=${service.id}`}
                 className={styles.ctaButton}
               >
-                Get in Touch
+                Entre em Contato
               </Link>
             </div>
           </div>
@@ -144,28 +144,28 @@ function ServiceDetail() {
           {/* Sidebar */}
           <aside className={styles.sidebar}>
             <div className={styles.sidebarCard}>
-              <h3 className={styles.sidebarTitle}>Service Details</h3>
+              <h3 className={styles.sidebarTitle}>Detalhes do Serviço</h3>
               <div className={styles.sidebarItem}>
-                <strong>Price:</strong> {service.price}
+                <strong>Preço:</strong> {service.price}
               </div>
               <div className={styles.sidebarItem}>
-                <strong>Category:</strong> {service.category}
+                <strong>Categoria:</strong> {service.category}
               </div>
               <Link 
                 to={`/contact?type=service&item=${service.id}`}
                 className={styles.sidebarButton}
               >
-                Request Service
+                Solicitar Serviço
               </Link>
             </div>
 
             <div className={styles.sidebarCard}>
-              <h3 className={styles.sidebarTitle}>Have Questions?</h3>
+              <h3 className={styles.sidebarTitle}>Tem Perguntas?</h3>
               <p className={styles.sidebarText}>
-                Want to learn more about this service? We're here to help!
+                Quer saber mais sobre este serviço? Estamos aqui para ajudar!
               </p>
               <Link to="/contact" className={styles.sidebarLink}>
-                Contact Us →
+                Entre em Contato →
               </Link>
             </div>
           </aside>

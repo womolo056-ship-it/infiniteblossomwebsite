@@ -7,10 +7,10 @@ function About() {
   const { ref: textRef, isVisible: textVisible } = useScrollAnimation({ threshold: 0.2 });
 
   const features = [
-    'Expert instructors with industry experience',
-    'Flexible learning schedules that fit your lifestyle',
-    'Comprehensive curriculum covering all skill levels',
-    'Lifetime access to course materials and updates'
+    'Instrutores especializados com experiência na indústria',
+    'Horários de aprendizagem flexíveis que se adaptam ao seu estilo de vida',
+    'Currículo abrangente cobrindo todos os níveis de habilidade',
+    'Acesso vitalício aos materiais do curso e atualizações'
   ]
 
   return (
@@ -37,11 +37,11 @@ function About() {
               </div>
               
               {/* Decorative Badge/Award Element */}
-              <div className={styles.badge} role="img" aria-label="10 plus years of experience award">
+              <div className={styles.badge} role="img" aria-label="Mais de 10 anos de experiência">
                 <div className={styles.badgeIcon} aria-hidden="true">🏆</div>
                 <div className={styles.badgeText}>
                   <div className={styles.badgeNumber}>10+</div>
-                  <div className={styles.badgeLabel}>Years Experience</div>
+                  <div className={styles.badgeLabel}>Anos de Experiência</div>
                 </div>
               </div>
               
@@ -57,15 +57,15 @@ function About() {
             ref={textRef}
             className={`${styles.textContent} fade-in-right ${textVisible ? 'visible' : ''}`}
           >
-            <div className={styles.sectionLabel}>About Us</div>
+            <div className={styles.sectionLabel}>Sobre Nós</div>
             <h2 id="about-heading" className={styles.heading}>
-              We Provide The <span className={styles.highlight}>Best</span> Learning Experience
+              Proporcionamos a <span className={styles.highlight}>Melhor</span> Experiência de Aprendizagem
             </h2>
             <p className={styles.description}>
-              At Infinite Blossom, we believe in empowering individuals through quality education. 
-              Our platform offers a diverse range of courses designed to help you achieve your personal 
-              and professional goals. With cutting-edge technology and expert instructors, we make 
-              learning accessible, engaging, and effective.
+              Na Infinite Blossom, acreditamos em capacitar indivíduos através de educação de qualidade. 
+              Nossa plataforma oferece uma gama diversificada de cursos projetados para ajudá-lo a alcançar seus objetivos 
+              pessoais e profissionais. Com tecnologia de ponta e instrutores especializados, tornamos 
+              a aprendizagem acessível, envolvente e eficaz.
             </p>
             
             {/* Feature List */}

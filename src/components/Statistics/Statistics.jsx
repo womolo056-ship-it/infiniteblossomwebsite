@@ -10,22 +10,22 @@ const Statistics = ({ stats }) => {
     {
       icon: <FaBook />,
       value: '10,000+',
-      label: 'Online Courses'
+      label: 'Cursos Online'
     },
     {
       icon: <FaUsers />,
       value: '50,000+',
-      label: 'Active Students'
+      label: 'Alunos Ativos'
     },
     {
       icon: <FaCertificate />,
       value: '5,000+',
-      label: 'Certificates Issued'
+      label: 'Certificados Emitidos'
     },
     {
       icon: <FaGraduationCap />,
       value: '200+',
-      label: 'Expert Instructors'
+      label: 'Instrutores Especializados'
     }
   ];
 

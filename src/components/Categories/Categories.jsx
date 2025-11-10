@@ -36,7 +36,7 @@ const Categories = ({ categories }) => {
   const defaultCategories = [
     {
       id: 'development',
-      name: 'Development',
+      name: 'Desenvolvimento',
       icon: <FaCode />,
       color: '#4ECDC4'
     },
@@ -48,19 +48,19 @@ const Categories = ({ categories }) => {
     },
     {
       id: 'business',
-      name: 'Business',
+      name: 'Negócios',
       icon: <FaBriefcase />,
       color: '#FFD93D'
     },
     {
       id: 'photography',
-      name: 'Photography',
+      name: 'Fotografia',
       icon: <FaCamera />,
       color: '#A8E6CF'
     },
     {
       id: 'music',
-      name: 'Music',
+      name: 'Música',
       icon: <FaMusic />,
       color: '#FFB6C1'
     },
@@ -82,7 +82,7 @@ const Categories = ({ categories }) => {
           ref={headingRef}
           className={`${styles.sectionHeading} fade-in ${headingVisible ? 'visible' : ''}`}
         >
-          Top Categories
+          Principais Categorias
         </h2>
         <div 
           ref={gridRef}
@@ -96,7 +96,7 @@ const Categories = ({ categories }) => {
         </div>
         <div className={styles.viewAllWrapper}>
           <Link to="/services" className={styles.viewAllButton}>
-            View All Services & Courses
+            Ver Todos os Serviços e Cursos
           </Link>
         </div>
       </div>

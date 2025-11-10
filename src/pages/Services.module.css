@@ -101,6 +101,7 @@
   font-weight: var(--font-weight-bold);
   font-family: var(--font-heading);
   margin-bottom: var(--spacing-md);
+  color: white;
 }
 
 .ctaDescription {

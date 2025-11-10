@@ -136,18 +136,7 @@
   border: none;
   border-radius: var(--radius-md);
   cursor: pointer;
-  transition: all var(--transition-base);
   box-shadow: var(--shadow-md);
-}
-
-.submitButton:hover {
-  background-color: var(--color-primary-dark);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
-}
-
-.submitButton:active {
-  transform: translateY(0);
 }
 
 .contactInfo {

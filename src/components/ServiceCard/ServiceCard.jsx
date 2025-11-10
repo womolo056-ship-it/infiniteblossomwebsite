@@ -25,12 +25,12 @@ const ServiceCard = ({ item, type = 'course' }) => {
           <div className={styles.meta}>
             {item.duration && (
               <span className={styles.metaItem}>
-                <strong>Duration:</strong> {item.duration}
+                <strong>Duração:</strong> {item.duration}
               </span>
             )}
             {item.level && (
               <span className={styles.metaItem}>
-                <strong>Level:</strong> {item.level}
+                <strong>Nível:</strong> {item.level}
               </span>
             )}
           </div>
@@ -51,9 +51,9 @@ const ServiceCard = ({ item, type = 'course' }) => {
           <Link 
             to={`/${type}/${item.id}`}
             className={styles.learnMoreLink}
-            aria-label={`Learn more about ${item.title}`}
+            aria-label={`Saiba mais sobre ${item.title}`}
           >
-            Learn More →
+            Saiba Mais →
           </Link>
         </div>
         
@@ -62,9 +62,9 @@ const ServiceCard = ({ item, type = 'course' }) => {
           <Link 
             to={`/contact?type=${type}&item=${item.id}`}
             className={styles.button} 
-            aria-label={`Subscribe to ${item.title}`}
+            aria-label={`Inscrever-se em ${item.title}`}
           >
-            Subscribe
+            Inscrever-se
           </Link>
         </div>
       </div>

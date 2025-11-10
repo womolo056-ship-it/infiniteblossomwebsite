@@ -21,16 +21,16 @@ function Hero() {
             className={`${styles.textContent} fade-in-left ${textVisible ? 'visible' : ''}`}
           >
             <h1 id="hero-heading" className={styles.headline}>
-              The <span className={styles.highlight}>Best</span> Online Learning Platform
+              A <span className={styles.highlight}>Melhor</span> Plataforma de Aprendizagem Online
             </h1>
             <p className={styles.description}>
-              Unlock your potential with our comprehensive courses designed by industry experts. 
-              Learn at your own pace and achieve your goals with Infinite Blossom.
+              Desbloqueie seu potencial com nossos cursos abrangentes projetados por especialistas da indústria. 
+              Aprenda no seu próprio ritmo e alcance seus objetivos com a Infinite Blossom.
             </p>
-            <button className={styles.ctaButton}>
-              Get Started
+            <a href="/services" className={styles.ctaButton}>
+              Começar Agora
               <FaArrowRight className={styles.buttonIcon} />
-            </button>
+            </a>
           </div>
           
           <div 

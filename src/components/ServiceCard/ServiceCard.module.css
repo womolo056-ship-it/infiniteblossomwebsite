@@ -50,7 +50,7 @@
   padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: var(--radius-md);
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-bold);
   box-shadow: var(--shadow-md);
 }
 
@@ -171,7 +171,7 @@
 .price {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
+  color: white;
   font-family: var(--font-heading);
 }
 

@@ -11,22 +11,22 @@ function Home() {
     {
       icon: <FaBook />,
       value: '10+',
-      label: 'Quality Courses'
+      label: 'Cursos de Qualidade'
     },
     {
       icon: <FaUsers />,
       value: '500+',
-      label: 'Happy Students'
+      label: 'Alunos Satisfeitos'
     },
     {
       icon: <FaCertificate />,
       value: '300+',
-      label: 'Certificates Issued'
+      label: 'Certificados Emitidos'
     },
     {
       icon: <FaGraduationCap />,
       value: '15+',
-      label: 'Expert Instructors'
+      label: 'Instrutores Especializados'
     }
   ];
 
@@ -34,31 +34,31 @@ function Home() {
   const categoriesData = [
     {
       id: 'languages',
-      name: 'Language Courses',
+      name: 'Cursos de Idiomas',
       icon: <FaLanguage />,
       color: '#4ECDC4'
     },
     {
       id: 'ai-courses',
-      name: 'AI & Technology',
+      name: 'IA e Tecnologia',
       icon: <FaRobot />,
       color: '#FF6B6B'
     },
     {
       id: 'ai-automation',
-      name: 'AI Automation',
+      name: 'Automação de IA',
       icon: <FaRobot />,
       color: '#FFD93D'
     },
     {
       id: 'marketing',
-      name: 'Digital Marketing',
+      name: 'Marketing Digital',
       icon: <FaBullhorn />,
       color: '#A8E6CF'
     },
     {
       id: 'web-dev',
-      name: 'Web Development',
+      name: 'Desenvolvimento Web',
       icon: <FaGlobe />,
       color: '#B4A7D6'
     }

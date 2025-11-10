@@ -2,48 +2,48 @@
 export const services = [
   {
     id: 'ai-automations',
-    title: 'AI Automations for Business',
-    description: 'Transform your business operations with custom AI automation solutions. Streamline workflows, reduce costs, and increase efficiency.',
-    price: '20,000 Kz',
+    title: 'Automações de IA para Negócios',
+    description: 'Transforme as operações do seu negócio com soluções personalizadas de automação de IA. Otimize fluxos de trabalho, reduza custos e aumente a eficiência.',
+    price: '20.000 Kz',
     priceValue: 20000,
     image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80',
-    category: 'AI Solutions',
+    category: 'Soluções de IA',
     features: [
-      'Custom AI workflow automation',
-      'Process optimization',
-      'Integration with existing systems',
-      'Ongoing support and maintenance'
+      'Automação de fluxo de trabalho de IA personalizada',
+      'Otimização de processos',
+      'Integração com sistemas existentes',
+      'Suporte e manutenção contínuos'
     ]
   },
   {
     id: 'ad-creation',
-    title: 'Ad Creation & Social Media Management',
-    description: 'Professional advertising and social media management services to grow your brand and engage your audience effectively.',
-    price: '30,000 Kz',
+    title: 'Criação de Anúncios e Gestão de Redes Sociais',
+    description: 'Serviços profissionais de publicidade e gestão de redes sociais para expandir sua marca e envolver seu público de forma eficaz.',
+    price: '30.000 Kz',
     priceValue: 30000,
     image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80',
     category: 'Marketing',
     features: [
-      'Creative ad design and copywriting',
-      'Multi-platform social media management',
-      'Content calendar planning',
-      'Analytics and performance reporting'
+      'Design criativo de anúncios e redação',
+      'Gestão de redes sociais multiplataforma',
+      'Planejamento de calendário de conteúdo',
+      'Análises e relatórios de desempenho'
     ]
   },
   {
     id: 'website-creation',
-    title: 'Website Creation',
-    description: 'Custom website design and development tailored to your business needs. Modern, responsive, and optimized for performance.',
-    price: 'Contact for Custom Price',
+    title: 'Criação de Sites',
+    description: 'Design e desenvolvimento de sites personalizados adaptados às necessidades do seu negócio. Moderno, responsivo e otimizado para desempenho.',
+    price: 'Contacte para Preço Personalizado',
     priceValue: null,
     image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80',
-    category: 'Web Development',
+    category: 'Desenvolvimento Web',
     features: [
-      'Custom design and development',
-      'Responsive and mobile-friendly',
-      'SEO optimization',
-      'Content management system',
-      'Hosting and maintenance options'
+      'Design e desenvolvimento personalizados',
+      'Responsivo e compatível com dispositivos móveis',
+      'Otimização SEO',
+      'Sistema de gestão de conteúdo',
+      'Opções de hospedagem e manutenção'
     ]
   }
 ];

@@ -54,6 +54,7 @@
   font-size: var(--font-size-4xl);
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--spacing-md);
+  color: white;
 }
 
 .heroPrice {

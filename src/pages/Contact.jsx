@@ -37,35 +37,56 @@ function Contact() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Create email body
-    const subject = selectedItem 
-      ? `Subscription Request: ${selectedItem.title}`
-      : 'Contact Form Submission';
-    
-    const body = `
-Full Name: ${formData.fullName}
-Email: ${formData.email}
-Phone: ${formData.phone}
+    // Prepare data for webhook
+    const webhookData = {
+      fullName: formData.fullName,
+      email: formData.email,
+      phone: formData.phone,
+      message: formData.message,
+      type: selectedItem ? selectedItem.type : 'general',
+      itemTitle: selectedItem ? selectedItem.title : null,
+      itemId: selectedItem ? selectedItem.id : null,
+      itemPrice: selectedItem ? selectedItem.price : null,
+      timestamp: new Date().toISOString()
+    };
 
-${selectedItem ? `Interested in: ${selectedItem.title} (${selectedItem.type})` : ''}
+    console.log('Sending data to webhook:', webhookData);
 
-Message:
-${formData.message}
-    `.trim();
+    try {
+      // Send to n8n production webhook
+      const response = await fetch('https://tijoweb.app.n8n.cloud/webhook/7aee2a59-fd71-488c-9bd6-36e9a5339dcb', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(webhookData)
+      });
 
-    // Open email client
-    window.location.href = `mailto:info@infiniteblossom.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    
-    // Reset form
-    setFormData({
-      fullName: '',
-      email: '',
-      phone: '',
-      message: ''
-    });
+      console.log('Response status:', response.status);
+      const responseData = await response.text();
+      console.log('Response data:', responseData);
+
+      // Check if response is ok or if it's a 2xx status
+      if (response.ok || (response.status >= 200 && response.status < 300)) {
+        alert('Obrigado! Sua mensagem foi enviada com sucesso.');
+        // Reset form
+        setFormData({
+          fullName: '',
+          email: '',
+          phone: '',
+          message: ''
+        });
+      } else {
+        console.error('Webhook error:', response.status, responseData);
+        alert('Houve um erro ao enviar sua mensagem. Por favor, tente novamente.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('Houve um erro ao enviar sua mensagem. Por favor, tente novamente.');
+    }
   };
 
   return (
@@ -74,12 +95,12 @@ ${formData.message}
       <section className={styles.hero}>
         <div className={styles.container}>
           <h1 className={styles.heroTitle}>
-            {selectedItem ? 'Subscribe Now' : 'Get in Touch'}
+            {selectedItem ? 'Inscreva-se Agora' : 'Entre em Contato'}
           </h1>
           <p className={styles.heroDescription}>
             {selectedItem 
-              ? `Fill out the form below to subscribe to ${selectedItem.title}`
-              : 'We\'d love to hear from you. Send us a message and we\'ll respond as soon as possible.'}
+              ? `Preencha o formulário abaixo para se inscrever em ${selectedItem.title}`
+              : 'Adoraríamos ouvir de você. Envie-nos uma mensagem e responderemos o mais breve possível.'}
           </p>
         </div>
       </section>
@@ -90,7 +111,7 @@ ${formData.message}
           <div className={styles.formWrapper}>
             {selectedItem && (
               <div className={styles.selectedItem}>
-                <h2>Selected {selectedItem.type === 'course' ? 'Course' : 'Service'}</h2>
+                <h2>{selectedItem.type === 'course' ? 'Curso' : 'Serviço'} Selecionado</h2>
                 <div className={styles.itemCard}>
                   <img src={selectedItem.image} alt={selectedItem.title} className={styles.itemImage} />
                   <div className={styles.itemInfo}>
@@ -108,7 +129,7 @@ ${formData.message}
             >
               <div className={styles.formGroup}>
                 <label htmlFor="fullName" className={styles.label}>
-                  Full Name <span className={styles.required}>*</span>
+                  Nome Completo <span className={styles.required}>*</span>
                 </label>
                 <input
                   type="text"
@@ -118,7 +139,7 @@ ${formData.message}
                   onChange={handleChange}
                   className={styles.input}
                   required
-                  placeholder="Enter your full name"
+                  placeholder="Digite seu nome completo"
                 />
               </div>
 
@@ -134,13 +155,13 @@ ${formData.message}
                   onChange={handleChange}
                   className={styles.input}
                   required
-                  placeholder="your.email@example.com"
+                  placeholder="seu.email@exemplo.com"
                 />
               </div>
 
               <div className={styles.formGroup}>
                 <label htmlFor="phone" className={styles.label}>
-                  Phone Number <span className={styles.required}>*</span>
+                  Número de Telefone <span className={styles.required}>*</span>
                 </label>
                 <input
                   type="tel"
@@ -156,7 +177,7 @@ ${formData.message}
 
               <div className={styles.formGroup}>
                 <label htmlFor="message" className={styles.label}>
-                  Message
+                  Mensagem
                 </label>
                 <textarea
                   id="message"
@@ -165,32 +186,32 @@ ${formData.message}
                   onChange={handleChange}
                   className={styles.textarea}
                   rows="5"
-                  placeholder="Tell us more about yourself or any questions you have..."
+                  placeholder="Conte-nos mais sobre você ou quaisquer perguntas que tenha..."
                 />
               </div>
 
               <button type="submit" className={styles.submitButton}>
-                Send Message
+                Enviar Mensagem
               </button>
             </form>
           </div>
 
           {/* Contact Info */}
           <div className={styles.contactInfo}>
-            <h2>Contact Information</h2>
+            <h2>Informações de Contato</h2>
             <div className={styles.infoItem}>
               <h3>Email</h3>
-              <a href="mailto:info@infiniteblossom.com">info@infiniteblossom.com</a>
+              <a href="mailto:evaristokakumba101@gmail.com">evaristokakumba101@gmail.com</a>
             </div>
             <div className={styles.infoItem}>
-              <h3>Phone</h3>
-              <a href="tel:+1234567890">+1 (234) 567-890</a>
+              <h3>Telefone</h3>
+              <a href="tel:+244975359736">+244 975 359 736</a>
             </div>
             <div className={styles.infoItem}>
-              <h3>Business Hours</h3>
-              <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-              <p>Saturday: 10:00 AM - 4:00 PM</p>
-              <p>Sunday: Closed</p>
+              <h3>Horário de Atendimento</h3>
+              <p>Segunda - Sexta: 9:00 - 18:00</p>
+              <p>Sábado: 10:00 - 16:00</p>
+              <p>Domingo: Fechado</p>
             </div>
           </div>
         </div>

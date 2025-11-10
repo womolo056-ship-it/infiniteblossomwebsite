@@ -140,6 +140,13 @@
   font-size: var(--font-size-base);
 }
 
+.logoImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 .logoText {
   white-space: nowrap;
 }

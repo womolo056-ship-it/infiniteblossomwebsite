@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { FiPhone, FiMail, FiX } from 'react-icons/fi';
 import SearchIcon from '../../assets/Search.png';
 import MenuIcon from '../../assets/Menu.png';
+import CompanyLogo from '../../assets/Company logo.jpeg';
 import styles from './Header.module.css';
 
 const Header = () => {
@@ -32,11 +33,11 @@ const Header = () => {
   };
 
   const navLinks = [
-    { label: 'Home', href: '/', isRoute: true },
-    { label: 'Services & Courses', href: '/services', isRoute: true },
-    { label: 'About', href: '/about', isRoute: true },
-    { label: 'Testimonials', href: '/testimonials', isRoute: true },
-    { label: 'Contact', href: '/contact', isRoute: true },
+    { label: 'Início', href: '/', isRoute: true },
+    { label: 'Serviços e Cursos', href: '/services', isRoute: true },
+    { label: 'Sobre', href: '/about', isRoute: true },
+    { label: 'Testemunhos', href: '/testimonials', isRoute: true },
+    { label: 'Contato', href: '/contact', isRoute: true },
   ];
 
   useEffect(() => {
@@ -71,19 +72,19 @@ const Header = () => {
         <div className={styles.container}>
           <div className={styles.topBarContent}>
             <div className={styles.contactInfo}>
-              <a href="tel:+1234567890" className={styles.contactLink} aria-label="Call us at +1 (234) 567-890">
+              <a href="tel:+244975359736" className={styles.contactLink} aria-label="Ligue para +244 975 359 736">
                 <FiPhone className={styles.icon} aria-hidden="true" />
-                <span>+1 (234) 567-890</span>
+                <span>+244 975 359 736</span>
               </a>
-              <a href="mailto:info@infiniteblossom.com" className={styles.contactLink} aria-label="Email us at info@infiniteblossom.com">
+              <a href="mailto:evaristokakumba101@gmail.com" className={styles.contactLink} aria-label="Envie email para evaristokakumba101@gmail.com">
                 <FiMail className={styles.icon} aria-hidden="true" />
-                <span>info@infiniteblossom.com</span>
+                <span>evaristokakumba101@gmail.com</span>
               </a>
             </div>
             <div className={styles.authLinks}>
-              <a href="#login" className={styles.authLink}>Login</a>
+              <a href="#login" className={styles.authLink}>Entrar</a>
               <span className={styles.separator} aria-hidden="true">/</span>
-              <a href="#register" className={styles.authLink}>Register</a>
+              <a href="#register" className={styles.authLink}>Registrar</a>
             </div>
           </div>
         </div>
@@ -94,8 +95,8 @@ const Header = () => {
         <div className={styles.container}>
           <div className={styles.navContent}>
             {/* Logo */}
-            <Link to="/" className={styles.logo} aria-label="Infinite Blossom - Home">
-              <div className={styles.logoIcon} aria-hidden="true">IB</div>
+            <Link to="/" className={styles.logo} aria-label="Infinite Blossom - Início">
+              <img src={CompanyLogo} alt="Infinite Blossom Logo" className={styles.logoImage} />
               <span className={styles.logoText}>Infinite Blossom</span>
             </Link>
 
